@@ -1,9 +1,9 @@
 const URL_PLANS_DEV = "http://127.0.0.1:5500/src/plans.json";
-const URL_PLANS_DEPLOY =
-  "https://estivenmayhuay.github.io/Music_Order_Component/src/plans.json";
 
 const getPlans = async () => {
-  const res = await fetch(URL_PLANS_DEPLOY),
+  const res = await fetch(
+      "https://estivenmayhuay.github.io/Music_Order_Component/src/plans.json"
+    ),
     body = await res.text(),
     data = await JSON.parse(body);
 
