@@ -1,0 +1,226 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+:root {
+  --pale-blue: hsl(255, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(255, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 110vh;
+  background: url("../images/pattern-background-desktop.svg") no-repeat;
+  background-size: contain;
+  background-position: top;
+  background-color: rgba(214, 225, 252, 0.75);
+}
+
+.plans {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  max-width: 100%;
+  height: 100%;
+  padding: 1em;
+  transform: translate(0, -100%);
+  transition: transform 0.4s ease;
+  background: var(--pale-blue);
+  z-index: 9;
+  overflow: hidden;
+}
+
+.showModal {
+  transform: translate(0, 0);
+  transition: transform 0.4s ease;
+}
+
+.cardPlan {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  row-gap: 0.5em;
+  width: 280px;
+  padding: 1em;
+  background: var(--dark-blue);
+  border-radius: 10px;
+  color: var(--pale-blue);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cardPlan p {
+  text-align: center;
+}
+
+.cardPlan span {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.btnSelectPlan {
+  outline: none;
+  border: none;
+  color: var(--pale-blue);
+  font-size: 1em;
+  font-weight: 700;
+  padding: 10px 30px;
+  background: var(--bright-blue);
+  border-radius: 8px;
+}
+
+/* Component Order */
+.order {
+  position: relative;
+  width: 350px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 15px 15px 30px -10px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.order__img {
+  height: 220px;
+}
+
+.order__img > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order__descp {
+  display: flex;
+  flex-flow: column;
+  row-gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.order__descp > h1 {
+  color: var(--dark-blue);
+  font-size: 1.4em;
+}
+
+.order__descp > p {
+  color: var(--desaturated-blue);
+  font-size: 1em;
+}
+
+.order__descp > h1,
+.order__descp > p {
+  text-align: center;
+}
+
+.order__plans {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  background: var(--very-pale-blue);
+  border-radius: 16px;
+}
+
+.plan__info h2 {
+  color: var(--dark-blue);
+  font-size: 1.1em;
+}
+
+.plan__info span {
+  color: var(--desaturated-blue);
+  font-size: 1em;
+}
+
+.order__payment {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  row-gap: 1em;
+  padding: 1em;
+}
+
+#btnChangePlan {
+  color: var(--bright-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.order__payment button {
+  outline: none;
+  border: none;
+  flex: 100%;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.order__payment button:hover {
+  filter: brightness(1.1);
+  transition: filter 0.4s ease;
+}
+
+.order__payment button:active {
+  transform: scale(0.85);
+  transition: transform 0.4s ease;
+}
+
+#btnProcceedPay {
+  background: var(--bright-blue);
+  color: var(--pale-blue);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#btnProcceedPay:disabled {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+  box-shadow: none;
+  cursor: default;
+}
+
+#btnProcceedPay:disabled:active {
+  transform: none;
+}
+
+#btnCancelOrder {
+  background: transparent;
+  color: var(--dark-blue);
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 760px) {
+  .plans {
+    flex-flow: row nowrap;
+  }
+
+  .cardPlan {
+    flex: 1;
+    max-width: 320px;
+  }
+}

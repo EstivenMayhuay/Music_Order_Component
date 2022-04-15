@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Annual Plan",
+    "price": 59.99,
+    "money": "$",
+    "type": "year",
+    "description": "With this plan you can enjoy the best songs throughout the year without ads, unlimited songs"
+  },
+  {
+    "name": "Monthly Plan",
+    "price": 79.99,
+    "money": "$",
+    "type": "month",
+    "description": "With this plan you can enjoy the best songs monthly, you will have ads about our products, with 150 songs per month"
+  },
+  {
+    "name": "Daily Plan",
+    "price": 9.99,
+    "money": "$",
+    "type": "day",
+    "description": "With this plan you can enjoy ads and daily songs with certain limitations 4 songs per day"
+  }
+]
